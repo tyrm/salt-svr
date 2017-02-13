@@ -1,1 +1,2 @@
- pg_password: changeme
+mysql_password: changeme
+pg_password: changeme
