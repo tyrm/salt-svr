@@ -1,8 +1,8 @@
 pg_axiom:
   dockerng.running:
-    - name: pg_axiom
+    - name: postgres
     - image: postgres:latest
     - port_bindings: 5432:5432
-    - binds: /mnt/axiom/docker/pg_axiom/data:/var/lib/postgresql/data
+    - binds: {{ pillar['docker']['ssd_dir'] }}/postgres/data:/var/lib/postgresql/data
     - environment:
       - POSTGRES_PASSWORD: {{ pillar['pg_password'] }}
