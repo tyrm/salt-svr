@@ -17,8 +17,8 @@ plexmediaserver container:
     - image: linuxserver/plex:latest
     - network_mode: host
     - binds:
-      - {{ pillar['docker']['ssd_dir'] }}/plex/config:/var/lib/postgresql/data
       - {{ pillar['plex']['media'] }}:/data/media
+      - {{ pillar['docker']['ssd_dir'] }}/plex/config:/config
     - environment:
       - VERSION: latest
       - PUID: {{ pillar['plex']['uid'] }}
