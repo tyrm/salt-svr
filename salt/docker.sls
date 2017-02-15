@@ -2,7 +2,7 @@ docker-main repository:
   pkgrepo.managed:
     - humanname: Docker Repository
 {% if grains['os_family'] == 'RedHat' %}
-    - name: docker-main 
+    - name: docker-main
 {% if grains['os'] == 'CentOS' or grains['os'] == 'RedHat' %}
     - baseurl: https://yum.dockerproject.org/repo/main/centos/$releasever/
 {% elif grains['os'] == 'Fedora' %}
@@ -21,11 +21,5 @@ docker:
     - watch:
       - pkg: docker-engine
 
-python-pip:
-  pkg.installed
-
 docker-py:
-  pip.installed:
-    - require:
-      - pkg: python-pip
-
+  pip.installed
