@@ -21,7 +21,6 @@ plexmediaserver container:
       - {{ pillar['docker']['ssd_dir'] }}/plex/config:/config
     - environment:
       - VERSION: latest
-      - PUID: {{ pillar['plex']['uid'] }}
-      - PGID: {{ pillar['plex']['gid'] }}
+      - PUID: '{{ pillar['plex']['uid'] }}'
+      - PGID: '{{ pillar['plex']['gid'] }}'
       - TZ: {{ pillar['timezone'] }}
-  
