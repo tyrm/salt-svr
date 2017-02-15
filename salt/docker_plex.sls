@@ -15,6 +15,7 @@ plexmediaserver container:
   dockerng.running:
     - name: plex
     - image: linuxserver/plex:latest
+    - restart_policy: always
     - network_mode: host
     - binds:
       - {{ pillar['plex']['media'] }}:/data/media:ro
