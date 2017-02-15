@@ -17,7 +17,7 @@ plexmediaserver container:
     - image: linuxserver/plex:latest
     - network_mode: host
     - binds:
-      - {{ pillar['plex']['media'] }}:/data/media
+      - {{ pillar['plex']['media'] }}:/data/media:ro
       - {{ pillar['docker']['ssd_dir'] }}/plex/config:/config
     - environment:
       - VERSION: latest
